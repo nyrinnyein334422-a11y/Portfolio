@@ -1,0 +1,664 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nyein Nyein Thant — Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-highest": "#e4e1e7",
+            "surface-container": "#f0edf3",
+            "primary": "#630ed4",
+            "background": "#fbf8fe",
+            "secondary": "#565e74",
+            "surface-dim": "#dbd9df",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "surface-variant": "#e4e1e7",
+            "outline-variant": "#ccc3d8",
+            "on-secondary": "#ffffff",
+            "primary-fixed-dim": "#d2bbff",
+            "surface-bright": "#fbf8fe",
+            "on-secondary-fixed-variant": "#3f465c",
+            "on-secondary-fixed": "#131b2e",
+            "outline": "#7b7487",
+            "secondary-container": "#dae2fd",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#bec6e0",
+            "on-surface": "#1b1b1f",
+            "on-primary-fixed": "#25005a",
+            "on-error": "#ffffff",
+            "on-tertiary-container": "#ece1ff",
+            "on-primary-fixed-variant": "#5a00c6",
+            "tertiary": "#5d25c7",
+            "on-surface-variant": "#4a4455",
+            "surface-tint": "#732ee4",
+            "inverse-on-surface": "#f2f0f5",
+            "on-tertiary-fixed-variant": "#5516be",
+            "inverse-surface": "#303034",
+            "error-container": "#ffdad6",
+            "on-tertiary": "#ffffff",
+            "on-background": "#1b1b1f",
+            "on-primary": "#ffffff",
+            "on-tertiary-fixed": "#23005c",
+            "primary-fixed": "#eaddff",
+            "primary-container": "#7c3aed",
+            "secondary-fixed": "#dae2fd",
+            "on-primary-container": "#ede0ff",
+            "tertiary-container": "#7645e0",
+            "tertiary-fixed-dim": "#d0bcff",
+            "on-secondary-container": "#5c647a",
+            "surface-container-high": "#eae7ed",
+            "tertiary-fixed": "#e9ddff",
+            "inverse-primary": "#d2bbff",
+            "surface-container-low": "#f5f2f8",
+            "surface": "#fbf8fe"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "display-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "sans-serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "code-sm": ["JetBrains Mono", "monospace"]
+          }
+        }
+      }
+    };
+  </script>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-[#faf7fd] font-body-md text-on-surface antialiased min-h-screen relative overflow-x-hidden selection:bg-primary-fixed selection:text-primary">
+<!-- Ambient Floating Gradient Orbs -->
+<div class="fixed top-[-10rem] left-1/2 -translate-x-1/2 w-[750px] h-[550px] bg-gradient-to-tr from-purple-200/50 via-primary-fixed/40 to-indigo-100/40 rounded-full blur-[130px] -z-10 pointer-events-none"></div>
+<div class="fixed top-[35%] -left-40 w-[550px] h-[550px] bg-gradient-to-br from-purple-300/30 via-secondary-container/40 to-transparent rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+<div class="fixed top-[65%] -right-40 w-[600px] h-[600px] bg-gradient-to-tl from-purple-200/40 via-tertiary-fixed/30 to-transparent rounded-full blur-[130px] -z-10 pointer-events-none"></div>
+<div class="fixed bottom-[-10rem] left-1/3 w-[600px] h-[500px] bg-gradient-to-tr from-purple-100/40 via-primary-fixed/30 to-indigo-50/50 rounded-full blur-[140px] -z-10 pointer-events-none"></div>
+<!-- 1. Floating Header & Navigation -->
+<header class="fixed top-6 inset-x-0 z-50 flex justify-center px-4">
+<nav class="flex items-center justify-between gap-4 sm:gap-6 px-5 py-2.5 rounded-full bg-white/75 backdrop-blur-xl border border-white/80 shadow-[0_8px_30px_rgb(99,14,212,0.06)] hover:shadow-[0_12px_36px_rgb(99,14,212,0.1)] transition-all duration-300 max-w-2xl w-full">
+<!-- Identity -->
+<a class="flex items-center gap-3 group" href="#home">
+<div class="relative w-8 h-8 rounded-full overflow-hidden ring-2 ring-primary/20 group-hover:ring-primary transition-all">
+<img alt="Nyein Nyein Thant" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPJEi5FRlLogoP2F7cMIBWtWQh-nGxs3BCrXXFauvWKnik7zlx4V39PTtIKTSJsaY9oqm6epu3NRHmEWa5heYVIsHIdy_PVWO5ik91iFqhqNGjGMdaV-mIecKoncTaYFcL9y_xwB4Ifs0DOll_rLzPHcr50P-UsFcx2ycuyDkLqWtnLnsRI737K8kIQvE2qh8o9VltBRh87fu0_Z7OV8dc5m7PAhZcQvROqxY6bvSVoYINq77dP84">
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm font-bold text-sm tracking-tight text-on-surface group-hover:text-primary transition-colors">Nyein Nyein Thant</span>
+
+</div>
+</a>
+<!-- Navigation Links -->
+<div class="hidden sm:flex items-center gap-1 bg-surface-container/60 p-1 rounded-full border border-white/50"><a class="px-3.5 py-1.5 rounded-full text-xs font-semibold text-on-surface hover:text-primary hover:bg-white/80 transition-all" href="#home">Home</a>
+<a class="px-3.5 py-1.5 rounded-full text-xs font-medium text-on-surface-variant hover:text-primary hover:bg-white/80 transition-all" href="#about">About</a>
+<a class="px-3.5 py-1.5 rounded-full text-xs font-medium text-on-surface-variant hover:text-primary hover:bg-white/80 transition-all" href="#skills">Skills</a>
+<a class="px-3.5 py-1.5 rounded-full text-xs font-medium text-on-surface-variant hover:text-primary hover:bg-white/80 transition-all" href="#projects">Projects</a><a class="px-3.5 py-1.5 rounded-full text-xs font-medium text-on-surface-variant hover:text-primary hover:bg-white/80 transition-all" href="#contact">Contact</a></div>
+<!-- Quick Social & Action Icons -->
+<div class="flex items-center gap-1.5">
+<a aria-label="GitHub Profile" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-purple-100/60 transition-all" href="https://github.com/nyeinnyeinthant" rel="noopener noreferrer" target="_blank" title="GitHub">
+<span class="material-symbols-outlined text-[18px]">code</span>
+</a>
+<a aria-label="LinkedIn Profile" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-purple-100/60 transition-all" href="https://linkedin.com/in/nyeinnyeinthant" rel="noopener noreferrer" target="_blank" title="LinkedIn">
+<span class="material-symbols-outlined text-[18px]">work</span>
+</a>
+<a aria-label="Send Email" class="w-8 h-8 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-purple-100/60 transition-all" href="mailto:nyeinyeinthant.dev@example.com" title="Email">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+</a>
+</div>
+</nav>
+</header>
+<!-- Main Content Container -->
+<main class="w-full max-w-5xl mx-auto px-6 pt-36 pb-20 flex flex-col gap-28">
+<!-- 2. Hero Section -->
+<section class="relative flex flex-col items-center text-center" id="home">
+<!-- Status Badge Pill -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 backdrop-blur-md border border-purple-200/60 shadow-sm text-xs font-semibold text-primary mb-8 hover:border-primary/40 transition-all">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+<span>Open to Internships</span>
+<span class="text-outline-variant">•</span>
+<span class="text-on-surface-variant font-medium">Aspiring Developer</span>
+</div>
+<!-- Headline with Rich Violet-to-Purple Gradient -->
+<h1 class="font-display-lg text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface max-w-3xl leading-[1.15]">
+  Hi, I'm <span class="bg-gradient-to-r from-primary via-purple-600 to-tertiary-container bg-clip-text text-transparent">Nyein Nyein Thant</span>
+</h1>
+<p class="font-headline-sm text-lg sm:text-xl text-primary font-semibold mt-3">
+  Aspiring Developer &amp; CS Student
+</p>
+<!-- Supportive Bio Copy -->
+<p class="font-body-lg text-on-surface-variant max-w-2xl mt-4 leading-relaxed text-base sm:text-lg">
+  I enjoy building simple and useful web applications with clean code, intuitive UI, and accessible design. Passionate about turning complex logic into delightful, frictionless user experiences.
+</p>
+<!-- Action Buttons: Learn More & Contact -->
+<div class="flex flex-wrap items-center justify-center gap-3.5 mt-8">
+<a class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-primary to-purple-600 text-white font-semibold text-sm shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200" href="#about">
+<span>Learn More</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/80 backdrop-blur-md border border-purple-200 text-on-surface font-semibold text-sm shadow-sm hover:bg-white hover:border-primary/40 hover:text-primary transition-all duration-200" href="#contact">
+<span class="material-symbols-outlined text-[18px] text-primary">mail</span>
+<span>Contact</span>
+</a>
+</div>
+<!-- Monospace Status Pill -->
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/60 backdrop-blur-md border border-purple-100 text-on-surface-variant font-code-sm text-xs mt-6 shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">terminal</span>
+<span>status: exploring web architecture &amp; modern UI</span>
+</div>
+<!-- Hero Profile Card with Frosted Glass Frame -->
+<div class="relative mt-12 w-full max-w-md mx-auto group">
+<div class="absolute -inset-1 bg-gradient-to-r from-purple-400/35 via-primary-fixed/40 to-indigo-300/35 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition duration-500"></div>
+<div class="relative rounded-2xl bg-white/80 backdrop-blur-2xl border border-white/80 p-3.5 shadow-[0_20px_50px_rgba(99,14,212,0.08)]">
+<!-- Portrait Container -->
+<div class="relative w-full aspect-[4/3] rounded-xl overflow-hidden bg-purple-50">
+<img alt="Nyein Nyein Thant — Aspiring Developer and CS Student" class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg1ST-WwbdY_2kZIsyVFykZLCeKuHq2FqJYwTeHpU2Ua7dsimPvEgHuSKezPy2DP8Bw9SJ8B09RjnZXD1lnzZjOj1w1xaAW8aZ_62QlwHqiE9SvFBMCHD18SCLEt_gVxagMt6Q2u8V_bA1ALKXopsGdJWrVYEdUqPje_qDYfRpxcZcIU-X9-g4JBWz6k7yweK5mPKEzLKApQA-9lGsoOKa5UCAh7-8Su295YQfeHh-Ga5U2TC5RiU">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
+<div class="text-left text-white">
+<span class="font-headline-sm text-base font-bold block leading-tight">Nyein Nyein Thant</span>
+<span class="font-body-sm text-xs text-purple-200 flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+Yangon, Myanmar
+</span>
+</div>
+</div>
+</div>
+<!-- Glass Micro-Meta Bar with Caption Badges -->
+<div class="grid grid-cols-2 gap-2 mt-3 text-left">
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low/70 border border-purple-100/60">
+
+
+</div>
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-surface-container-low/70 border border-purple-100/60">
+
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+<!-- 3. Section 01: Technologies & Tools (Skills) -->
+<section class="flex flex-col gap-8" id="about"><!-- Section Header with Badge -->
+<div class="flex flex-col gap-1.5 text-center md:text-left">
+  <div class="inline-flex items-center justify-center md:justify-start gap-1.5">
+    <span class="h-2 w-2 rounded-full bg-primary"></span>
+    <span class="font-label-sm text-xs text-primary uppercase tracking-widest font-bold">About &amp; Purpose</span>
+  </div>
+  <h2 class="font-headline-lg text-2xl sm:text-3xl font-bold text-on-surface tracking-tight">About&nbsp;</h2>
+  <p class="font-body-sm text-on-surface-variant max-w-2xl text-sm leading-relaxed">
+    Get to know my journey, core philosophies, educational background, and engineering focus.
+  </p>
+</div>
+
+<!-- Prominent Bento Showcase Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+  <!-- 1. Large Hero Showcase Card (Spans 12 cols or large focal point) -->
+  <div class="lg:col-span-12 relative overflow-hidden rounded-3xl bg-white/80 backdrop-blur-xl border border-white/80 p-7 sm:p-10 shadow-[0_8px_30px_rgb(99,14,212,0.06)] hover:shadow-[0_12px_36px_rgb(99,14,212,0.1)] transition-all duration-300 text-left group">
+    <div class="absolute top-0 right-0 w-80 h-80 bg-gradient-to-bl from-purple-200/50 via-primary-fixed/30 to-transparent rounded-full blur-2xl -z-10 pointer-events-none"></div>
+    <div class="flex flex-col gap-5 max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100/70 border border-purple-200/60 w-fit">
+        <span class="font-label-sm text-[11px] text-primary uppercase tracking-wider font-bold">✨ CORE PURPOSE &amp; PHILOSOPHY</span>
+      </div>
+      <h3 class="font-display-lg text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface leading-[1.2]">
+        Passionate About Building <span class="bg-gradient-to-r from-primary via-purple-600 to-tertiary-container bg-clip-text text-transparent">Digital Experiences</span>
+      </h3>
+      <p class="font-body-lg text-on-surface-variant text-base sm:text-lg leading-relaxed">I’m a Computer Science undergraduate and aspiring Software Developer based in Maubin, Myanmar, passionate about Frontend and Odoo Development.<br><br>I enjoy building modern, responsive web interfaces and developing practical business solutions using modern technologies and clean code.<br><br>I’m always eager to learn, improve my skills, and create meaningful digital experiences.</p>
+      <!-- Interactive Strength Pills -->
+      <div class="flex flex-wrap gap-2 pt-2">
+        <span class="px-3.5 py-1.5 rounded-xl bg-surface-container-low/70 border border-purple-100/80 font-code-sm text-xs text-primary font-medium flex items-center gap-1.5 shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">architecture</span>
+          Clean Architecture
+        </span>
+        <span class="px-3.5 py-1.5 rounded-xl bg-surface-container-low/70 border border-purple-100/80 font-code-sm text-xs text-primary font-medium flex items-center gap-1.5 shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">accessibility_new</span>
+          Accessible UI/UX
+        </span>
+        <span class="px-3.5 py-1.5 rounded-xl bg-surface-container-low/70 border border-purple-100/80 font-code-sm text-xs text-primary font-medium flex items-center gap-1.5 shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">view_quilt</span>
+          Component-Driven
+        </span>
+        <span class="px-3.5 py-1.5 rounded-xl bg-surface-container-low/70 border border-purple-100/80 font-code-sm text-xs text-primary font-medium flex items-center gap-1.5 shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">lightbulb</span>
+          Creative Problem Solving
+        </span>
+        <span class="px-3.5 py-1.5 rounded-xl bg-surface-container-low/70 border border-purple-100/80 font-code-sm text-xs text-primary font-medium flex items-center gap-1.5 shadow-sm">
+          <span class="material-symbols-outlined text-[16px]">bolt</span>
+          Fast Iteration
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Academic Foundation Card (Spans 6 cols on lg) -->
+  
+
+  <!-- 3. Current Focus Card (Spans 6 cols on lg) -->
+  
+
+  <!-- 4. Key Stats Strip (Spans all 12 cols) -->
+  <div class="lg:col-span-12 grid grid-cols-2 sm:grid-cols-4 gap-4">
+    
+
+    
+
+    
+
+    
+  </div>
+</div></section><section class="flex flex-col gap-8" id="skills">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-3 text-center md:text-left">
+<div class="flex flex-col gap-1.5">
+<div class="inline-flex items-center justify-center md:justify-start gap-1.5">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-xs text-primary uppercase tracking-widest font-bold">Core Stack</span>
+</div>
+<h2 class="font-headline-lg text-2xl sm:text-3xl font-bold text-on-surface tracking-tight">Skills</h2>
+</div>
+
+</div>
+<!-- 8 Frosted Glass Cards with Soft Gradients & Glowing Borders -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:grid-cols-3"><!-- Python Card -->
+<div class="group relative rounded-2xl bg-white/75 backdrop-blur-lg border border-purple-100/80 p-5 shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_28px_rgb(99,14,212,0.1)] hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-purple-50 group-hover:bg-primary-fixed text-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[22px]">data_object</span>
+</div>
+<span class="font-code-sm text-[11px] px-2 py-0.5 rounded-md bg-purple-100/70 text-primary font-medium">Core</span>
+</div>
+<h3 class="font-headline-sm text-base font-bold text-on-surface group-hover:text-primary transition-colors">Python</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">Scripting, backend architecture, data handling, and automation.</p>
+</div>
+<div class="w-full bg-purple-100/60 h-1.5 rounded-full overflow-hidden mt-4">
+<div class="bg-gradient-to-r from-primary to-purple-500 h-full rounded-full transition-all duration-500" style="width: 88%;"></div>
+</div>
+</div>
+<!-- HTML Card -->
+<div class="group relative rounded-2xl bg-white/75 backdrop-blur-lg border border-purple-100/80 p-5 shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_28px_rgb(99,14,212,0.1)] hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-purple-50 group-hover:bg-primary-fixed text-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[22px]">html</span>
+</div>
+<span class="font-code-sm text-[11px] px-2 py-0.5 rounded-md bg-purple-100/70 text-primary font-medium">HTML5</span>
+</div>
+<h3 class="font-headline-sm text-base font-bold text-on-surface group-hover:text-primary transition-colors">HTML</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">HTML5 Semantic Web, accessible DOM markup, W3C standards.</p>
+</div>
+<div class="w-full bg-purple-100/60 h-1.5 rounded-full overflow-hidden mt-4">
+<div class="bg-gradient-to-r from-primary to-purple-500 h-full rounded-full transition-all duration-500" style="width: 95%;"></div>
+</div>
+</div>
+<!-- CSS Card -->
+<div class="group relative rounded-2xl bg-white/75 backdrop-blur-lg border border-purple-100/80 p-5 shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_28px_rgb(99,14,212,0.1)] hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-purple-50 group-hover:bg-primary-fixed text-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[22px]">palette</span>
+</div>
+<span class="font-code-sm text-[11px] px-2 py-0.5 rounded-md bg-purple-100/70 text-primary font-medium">CSS3</span>
+</div>
+<h3 class="font-headline-sm text-base font-bold text-on-surface group-hover:text-primary transition-colors">CSS</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">Modern CSS3, responsive layouts, flexbox/grid, animations.</p>
+</div>
+<div class="w-full bg-purple-100/60 h-1.5 rounded-full overflow-hidden mt-4">
+<div class="bg-gradient-to-r from-primary to-purple-500 h-full rounded-full transition-all duration-500" style="width: 90%;"></div>
+</div>
+</div>
+<!-- JavaScript Card -->
+<div class="group relative rounded-2xl bg-white/75 backdrop-blur-lg border border-purple-100/80 p-5 shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_28px_rgb(99,14,212,0.1)] hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-purple-50 group-hover:bg-primary-fixed text-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[22px]">javascript</span>
+</div>
+<span class="font-code-sm text-[11px] px-2 py-0.5 rounded-md bg-purple-100/70 text-primary font-medium">ES6+</span>
+</div>
+<h3 class="font-headline-sm text-base font-bold text-on-surface group-hover:text-primary transition-colors">JavaScript</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">ES6+, DOM manipulation, asynchronous programming, modern web standards.</p>
+</div>
+<div class="w-full bg-purple-100/60 h-1.5 rounded-full overflow-hidden mt-4">
+<div class="bg-gradient-to-r from-primary to-purple-500 h-full rounded-full transition-all duration-500" style="width: 85%;"></div>
+</div>
+</div>
+<!-- Odoo Development Card -->
+<div class="group relative rounded-2xl bg-white/75 backdrop-blur-lg border border-purple-100/80 p-5 shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_28px_rgb(99,14,212,0.1)] hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-purple-50 group-hover:bg-primary-fixed text-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[22px]">widgets</span>
+</div>
+<span class="font-code-sm text-[11px] px-2 py-0.5 rounded-md bg-purple-100/70 text-primary font-medium">ERP</span>
+</div>
+<h3 class="font-headline-sm text-base font-bold text-on-surface group-hover:text-primary transition-colors">Odoo Development</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">ERP customization, Python ORM, XML views, modular business extensions.</p>
+</div>
+<div class="w-full bg-purple-100/60 h-1.5 rounded-full overflow-hidden mt-4">
+<div class="bg-gradient-to-r from-primary to-purple-500 h-full rounded-full transition-all duration-500" style="width: 80%;"></div>
+</div>
+</div>
+<!-- DBMS Card -->
+<div class="group relative rounded-2xl bg-white/75 backdrop-blur-lg border border-purple-100/80 p-5 shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_28px_rgb(99,14,212,0.1)] hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="w-10 h-10 rounded-xl bg-purple-50 group-hover:bg-primary-fixed text-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[22px]">hub</span>
+</div>
+<span class="font-code-sm text-[11px] px-2 py-0.5 rounded-md bg-purple-100/70 text-primary font-medium">SQL</span>
+</div>
+<h3 class="font-headline-sm text-base font-bold text-on-surface group-hover:text-primary transition-colors">SQL</h3>
+<p class="font-body-sm text-xs text-on-surface-variant mt-1.5 leading-relaxed">Database Management Systems, SQL, relational modeling, query optimization.</p>
+</div>
+<div class="w-full bg-purple-100/60 h-1.5 rounded-full overflow-hidden mt-4">
+<div class="bg-gradient-to-r from-primary to-purple-500 h-full rounded-full transition-all duration-500" style="width: 82%;"></div>
+</div>
+</div></div>
+</section>
+<!-- 4. Section 02: About Nyein Nyein Thant (Background, Education & Highlights) -->
+
+<!-- 5. Section 03: Contact & Collaboration (Get In Touch) -->
+<section class="flex flex-col gap-8" id="projects"><div class="flex flex-col md:flex-row md:items-end justify-between gap-3 text-center md:text-left"><div class="flex flex-col gap-1.5"><div class="inline-flex items-center justify-center md:justify-start gap-1.5"><span class="h-2 w-2 rounded-full bg-primary"></span><span class="font-label-sm text-xs text-primary uppercase tracking-widest font-bold">Featured Work</span></div><h2 class="font-headline-lg text-2xl sm:text-3xl font-bold text-on-surface tracking-tight">Projects</h2><p class="font-body-sm text-on-surface-variant max-w-2xl text-sm leading-relaxed">Selected works showcasing frontend interfaces, Odoo ERP customization, and full-stack web solutions.</p></div></div><div class="grid grid-cols-1 sm:grid-cols-2 gap-6"><!-- Project 1: LibrariFlow -->
+<div class="group relative rounded-3xl bg-white/75 backdrop-blur-xl border border-purple-100/80 overflow-hidden shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_36px_rgb(99,14,212,0.1)] hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+  <div>
+    <!-- Image Thumbnail Showcase -->
+    <div class="relative w-full aspect-[4/3] overflow-hidden bg-purple-50 border-b border-purple-100/60">
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrDjxLhVICf4FiAi2nKpC9kG8S3b6TEWe9H7B8VaHZGSHgPIexVVDGfRr2weOHGkq3X0KbsnlOSFTnc7i3KCjDcFZ6eJEhJFOxB4HsNXAN-Mn_llzdBxBrcRcWdLunv4hRqeLZfAeco7PoXQYnRI9U5fbloZd5v6YJ9OZoroHlQx8F0NM1-lqFXCcheZ0O9EvbG13xczyR_um8dka55_0lsMpWpDJNuwaNKC6YZprK4" alt="LibrariFlow — Library Management System" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      <div class="absolute top-3 right-3">
+        <span class="font-code-sm text-[11px] px-2.5 py-0.5 rounded-full bg-white/80 backdrop-blur-md text-primary font-semibold shadow-sm border border-purple-200/60">Library System</span>
+      </div>
+    </div>
+    <!-- Clean Card Header -->
+    <div class="p-6 pb-2 flex flex-col gap-1.5 text-left">
+      <div class="flex items-center gap-1.5 text-xs font-semibold text-primary">
+        <span class="material-symbols-outlined text-[18px]">local_library</span>
+        <span>Web Application</span>
+      </div>
+      <h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+        LibrariFlow
+      </h3>
+    </div>
+  </div>
+  <!-- Card View Action -->
+  <div class="px-6 pb-6 pt-4">
+    <a href="#" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-purple-50/70 hover:bg-primary text-primary hover:text-white border border-purple-100/80 font-semibold text-xs transition-all duration-200 shadow-sm">
+      <span>&nbsp;View</span>
+      <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+    </a>
+  </div>
+</div>
+
+<!-- Project 2: AURIA Cosmetics & Skincare -->
+<div class="group relative rounded-3xl bg-white/75 backdrop-blur-xl border border-purple-100/80 overflow-hidden shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_36px_rgb(99,14,212,0.1)] hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+  <div>
+    <!-- Image Thumbnail Showcase -->
+    <div class="relative w-full aspect-[4/3] overflow-hidden bg-purple-50 border-b border-purple-100/60">
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrDpySAqMrR4DbGk8ZoWtSVW2P-O3yOr6RCmrRRLhaeUyBkwIS4TJ4v_lvlMQbjCkzlTOPaZGM41iY1z4eYbDAkVu1JpLVphAG8YDWDJVlIqU0nS14nRQazpxutLuAV-0StIfYtHPBaPblTyU-b3Qpx7gYx8Y-44oWKJWeu4d1ThPx9cltbYQZBtX_-FYo53txt5B_FusjzJDOGPv28jasuYKweVIJwJaSp4B1itxDQ" alt="AURIA — Cosmetics &amp; Skincare" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+      <div class="absolute top-3 right-3">
+        <span class="font-code-sm text-[11px] px-2.5 py-0.5 rounded-full bg-white/80 backdrop-blur-md text-primary font-semibold shadow-sm border border-purple-200/60">Cosmetics Store</span>
+      </div>
+    </div>
+    <!-- Clean Card Header -->
+    <div class="p-6 pb-2 flex flex-col gap-1.5 text-left">
+      <div class="flex items-center gap-1.5 text-xs font-semibold text-primary">
+        <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+        <span>E-Commerce Website</span>
+      </div>
+      <h3 class="font-headline-sm text-lg font-bold text-on-surface group-hover:text-primary transition-colors">
+        AURIA — Cosmetics &amp; Skincare
+      </h3>
+    </div>
+  </div>
+  <!-- Card View Action -->
+  <div class="px-6 pb-6 pt-4">
+    <a href="#" class="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-purple-50/70 hover:bg-primary text-primary hover:text-white border border-purple-100/80 font-semibold text-xs transition-all duration-200 shadow-sm">
+      <span>&nbsp;View</span>
+      <span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+    </a>
+  </div>
+</div></div></section><section class="flex flex-col gap-8" id="contact"><!-- Section Header -->
+<div class="flex flex-col gap-1.5 text-center md:text-left">
+  <div class="inline-flex items-center justify-center md:justify-start gap-1.5">
+    <span class="h-2 w-2 rounded-full bg-primary"></span>
+    <span class="font-label-sm text-xs text-primary uppercase tracking-widest font-bold">Get In Touch</span>
+  </div>
+  <h2 class="font-headline-lg text-2xl sm:text-3xl font-bold text-on-surface tracking-tight">Let's Connect</h2>
+  <p class="font-body-sm text-on-surface-variant max-w-xl text-sm leading-relaxed">
+    Have an opportunity, collaboration in mind, or just want to chat about web technology? Feel free to reach out directly or send a message below.
+  </p>
+</div>
+
+<!-- 2-Column Split Frosted Glass Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+  <!-- Left Column: Direct Connections & Availability (5 Cols) -->
+  <div class="lg:col-span-5 flex flex-col gap-4">
+    <!-- Availability & Status Card -->
+    <div class="rounded-3xl bg-white/75 backdrop-blur-xl border border-white/80 p-5 shadow-[0_8px_30px_rgb(99,14,212,0.04)] relative overflow-hidden group">
+      <div class="flex items-center justify-between pb-3 border-b border-purple-100/60">
+        <div class="flex items-center gap-2">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          <span class="text-xs font-semibold text-on-surface">Available for Roles</span>
+        </div>
+        <span class="font-code-sm text-[11px] px-2.5 py-0.5 rounded-full bg-purple-100/70 text-primary font-medium">Internships 2026</span>
+      </div>
+      <div class="mt-3 flex flex-col gap-1.5 text-xs text-on-surface-variant">
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[16px] text-tertiary">schedule</span>
+          <span>Typical response: <strong>&lt; 24 hours</strong></span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-[16px] text-tertiary">location_on</span>
+          <span>Yangon, Myanmar • UTC+6:30</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Direct Email Card -->
+    <a href="mailto:nyrinnyein332244@gmail.com" class="group rounded-2xl bg-white/75 backdrop-blur-xl border border-white/80 p-4 shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_28px_rgb(99,14,212,0.08)] hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3.5 min-w-0">
+        <div class="w-11 h-11 rounded-xl bg-purple-100/70 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+          <span class="material-symbols-outlined text-[20px]">alternate_email</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">Direct Email</span>
+          <span class="font-body-md text-sm font-semibold text-on-surface group-hover:text-primary transition-colors truncate">nyrinnyein332244@gmail.com</span>
+        </div>
+      </div>
+      <span class="material-symbols-outlined text-outline-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px] shrink-0">arrow_outward</span>
+    </a>
+
+    <!-- Direct Phone Card -->
+    <a href="tel:+959790123456" class="group rounded-2xl bg-white/75 backdrop-blur-xl border border-white/80 p-4 shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_28px_rgb(99,14,212,0.08)] hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3.5 min-w-0">
+        <div class="w-11 h-11 rounded-xl bg-purple-100/70 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors shrink-0">
+          <span class="material-symbols-outlined text-[20px]">call</span>
+        </div>
+        <div class="flex flex-col min-w-0">
+          <span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">Direct Phone</span>
+          <span class="font-body-md text-sm font-semibold text-on-surface group-hover:text-primary transition-colors truncate">+95 9 675134406</span>
+        </div>
+      </div>
+      <span class="material-symbols-outlined text-outline-variant group-hover:text-primary group-hover:translate-x-0.5 transition-all text-[20px] shrink-0">arrow_outward</span>
+    </a>
+
+    <!-- Social / Code Cards Grid -->
+    <div class="grid grid-cols-2 gap-3">
+      <!-- GitHub Card -->
+      <a href="https://github.com/neyinnyein332244" target="_blank" rel="noopener noreferrer" class="group rounded-2xl bg-white/75 backdrop-blur-xl border border-white/80 p-3.5 shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_28px_rgb(99,14,212,0.08)] hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between gap-3">
+        <div class="flex items-center justify-between">
+          <div class="w-9 h-9 rounded-lg bg-purple-100/70 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-[18px]">code</span>
+          </div>
+          <span class="material-symbols-outlined text-outline-variant group-hover:text-primary text-[16px]">arrow_outward</span>
+        </div>
+        <div>
+          <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold block">GitHub</span>
+          <span class="font-body-sm text-xs font-semibold text-on-surface group-hover:text-primary transition-colors truncate block">@neyinnyein332244</span>
+        </div>
+      </a>
+
+      <!-- LinkedIn Card -->
+      <a href="https://linkedin.com/in/nyeinnyeinthant" target="_blank" rel="noopener noreferrer" class="group rounded-2xl bg-white/75 backdrop-blur-xl border border-white/80 p-3.5 shadow-[0_4px_20px_rgb(99,14,212,0.03)] hover:shadow-[0_12px_28px_rgb(99,14,212,0.08)] hover:border-primary/40 hover:-translate-y-0.5 transition-all duration-200 flex flex-col justify-between gap-3">
+        <div class="flex items-center justify-between">
+          <div class="w-9 h-9 rounded-lg bg-purple-100/70 text-primary flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors">
+            <span class="material-symbols-outlined text-[18px]">work</span>
+          </div>
+          <span class="material-symbols-outlined text-outline-variant group-hover:text-primary text-[16px]">arrow_outward</span>
+        </div>
+        <div>
+          <span class="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold block">LinkedIn</span>
+          <span class="font-body-sm text-xs font-semibold text-on-surface group-hover:text-primary transition-colors truncate block">Nyein Nyein Thant</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Right Column: Interactive Frosted Glass Form (7 Cols) -->
+  <div class="lg:col-span-7">
+    <div class="rounded-3xl bg-white/75 backdrop-blur-xl border border-white/80 p-7 sm:p-8 shadow-[0_8px_30px_rgb(99,14,212,0.06)] relative">
+      <div class="flex items-center justify-between mb-6 pb-4 border-b border-purple-100/60">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-full bg-purple-100/80 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[18px]">mail</span>
+          </div>
+          <div>
+            <h3 class="font-headline-sm text-lg font-bold text-on-surface leading-tight">Send a Message</h3>
+            <p class="text-xs text-on-surface-variant">I'll get back to you as soon as possible.</p>
+          </div>
+        </div>
+        <span class="font-code-sm text-[11px] px-2.5 py-1 rounded-full bg-purple-100/70 text-primary font-medium hidden sm:inline-block">
+          Direct Inbox
+        </span>
+      </div>
+
+      <form onsubmit="event.preventDefault();" class="flex flex-col gap-4 text-left">
+        <!-- Name & Email Inputs Row -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="flex flex-col gap-1.5">
+            <label class="font-label-sm text-xs font-semibold text-on-surface" for="contact-name">Your Name</label>
+            <div class="relative flex items-center">
+              <span class="material-symbols-outlined text-[18px] text-outline absolute left-3.5 pointer-events-none">person</span>
+              <input id="contact-name" type="text" placeholder="nyein" required="" class="w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-purple-50/50 border border-purple-100/80 text-sm text-on-surface placeholder:text-outline-variant focus:bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+            </div>
+          </div>
+          <div class="flex flex-col gap-1.5">
+            <label class="font-label-sm text-xs font-semibold text-on-surface" for="contact-email">Email Address</label>
+            <div class="relative flex items-center">
+              <span class="material-symbols-outlined text-[18px] text-outline absolute left-3.5 pointer-events-none">mail</span>
+              <input id="contact-email" type="email" placeholder="nyein@gmail.com" required="" class="w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-purple-50/50 border border-purple-100/80 text-sm text-on-surface placeholder:text-outline-variant focus:bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+            </div>
+          </div>
+        </div>
+
+        <!-- Subject Selection -->
+        <div class="flex flex-col gap-1.5">
+          <label class="font-label-sm text-xs font-semibold text-on-surface" for="contact-subject">Subject / Inquiry Type</label>
+          <div class="relative flex items-center">
+            <span class="material-symbols-outlined text-[18px] text-outline absolute left-3.5 pointer-events-none">chat_bubble_outline</span>
+            <input id="contact-subject" type="text" placeholder="Internship Opportunity / Project Collaboration" class="w-full pl-10 pr-3.5 py-2.5 rounded-xl bg-purple-50/50 border border-purple-100/80 text-sm text-on-surface placeholder:text-outline-variant focus:bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+          </div>
+        </div>
+
+        <!-- Message Textarea -->
+        <div class="flex flex-col gap-1.5">
+          <label class="font-label-sm text-xs font-semibold text-on-surface" for="contact-message">Your Message</label>
+          <div class="relative">
+            <textarea id="contact-message" rows="4" placeholder="Write your message here..." required="" class="w-full p-3.5 rounded-xl bg-purple-50/50 border border-purple-100/80 text-sm text-on-surface placeholder:text-outline-variant focus:bg-white focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"></textarea>
+          </div>
+        </div>
+
+        <!-- Submit Action & Privacy Note -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 mt-2 pt-2">
+          <div class="flex items-center gap-1.5 text-[11px] text-on-surface-variant">
+            <span class="material-symbols-outlined text-[15px] text-tertiary">lock</span>
+            <span>Messages sent directly to inbox</span>
+          </div>
+          <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-gradient-to-r from-primary to-purple-600 text-white font-semibold text-sm shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer">
+            <span>Send Message</span>
+            <span class="material-symbols-outlined text-[18px]">send</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div></section>
+<!-- 6. Footer -->
+<footer class="pt-8 border-t border-purple-100/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-surface-variant">
+<div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+<span class="font-bold text-on-surface">Nyein Nyein Thant</span>
+<span>•</span>
+<span>CS Undergrad &amp; Aspiring Developer</span>
+<span>•</span>
+<span>Yangon, Myanmar</span>
+</div>
+<div class="flex items-center gap-5">
+<a class="hover:text-primary transition-colors" href="https://github.com/nyeinnyeinthant" rel="noopener noreferrer" target="_blank">GitHub</a>
+<a class="hover:text-primary transition-colors" href="https://linkedin.com/in/nyeinnyeinthant" rel="noopener noreferrer" target="_blank">LinkedIn</a>
+<a class="hover:text-primary transition-colors" href="mailto:nyeinyeinthant.dev@example.com">Email</a>
+<span class="text-outline-variant">© 2026</span>
+</div>
+</footer>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
